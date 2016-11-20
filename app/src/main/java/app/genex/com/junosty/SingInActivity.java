@@ -84,7 +84,7 @@ public class SingInActivity extends AppCompatActivity {
 
             progressDialog.setMessage("Iniciando sesión...");
             progressDialog.show();
-
+//que pedo
 
 
             firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
