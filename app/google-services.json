@@ -1,0 +1,104 @@
+{
+  "project_info": {
+    "project_number": "870560734180",
+    "firebase_url": "https://ving-328c9.firebaseio.com",
+    "project_id": "ving-328c9",
+    "storage_bucket": "ving-328c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870560734180:android:270f047e777689f5",
+        "android_client_info": {
+          "package_name": "app.genex.com.ving"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870560734180-52fvbboq3dsd9hafls7ohg2hes2fjcjh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqDjmgWO1GFMnIpcrEO-pN5QFA8tmv10M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870560734180:android:9bb5bf7e728af26e",
+        "android_client_info": {
+          "package_name": "app.genex.com.junosty20"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870560734180-52fvbboq3dsd9hafls7ohg2hes2fjcjh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqDjmgWO1GFMnIpcrEO-pN5QFA8tmv10M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870560734180:android:8cbc8580d8c139c8",
+        "android_client_info": {
+          "package_name": "app.genex.com.junosty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870560734180-52fvbboq3dsd9hafls7ohg2hes2fjcjh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqDjmgWO1GFMnIpcrEO-pN5QFA8tmv10M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
