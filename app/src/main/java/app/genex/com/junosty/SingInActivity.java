@@ -77,7 +77,7 @@ public class SingInActivity extends AppCompatActivity {
 
     private void checklogin() {
 
-        String email = loginEmailfield.getText().toString().trim() +"@hotmail.com";
+        String email = loginEmailfield.getText().toString().trim();// + "@hotmail.com"
         final String password = contraseñaloginfield.getText().toString().trim();
 
         if(!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)){

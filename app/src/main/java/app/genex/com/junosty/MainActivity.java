@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -27,6 +29,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import app.genex.com.junosty.ConsumoDeApi.Adapters.ListaUsuarioAdapter;
+import app.genex.com.junosty.ConsumoDeApi.ApiService.ApiService;
+import app.genex.com.junosty.ConsumoDeApi.Modelos.Usuario;
+import app.genex.com.junosty.ConsumoDeApi.Modelos.UsuarioRespuesta;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 import static app.genex.com.junosty.R.id.textView;
 
 public class MainActivity extends AppCompatActivity
@@ -40,6 +54,12 @@ public class MainActivity extends AppCompatActivity
     private String userName;
     ImageView imageView;
 
+    private Retrofit retrofit;
+    private static final String TAG = "Usuario";
+
+    private RecyclerView recyclerView;
+    private ListaUsuarioAdapter listaUsuarioAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +70,19 @@ public class MainActivity extends AppCompatActivity
         imageView = (ImageView) this.findViewById(R.id.imageView);
         Bitmap bitmap = getIntent().getParcelableExtra("pic");
         imageView.setImageBitmap(bitmap);
+        /*
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(listaUsuarioAdapter);
+        */
+
+
+        retrofit = new Retrofit.Builder()
+                .baseUrl("http://52.39.36.176:8000/apiv1/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        obtenerDatos();
 
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -63,10 +96,8 @@ public class MainActivity extends AppCompatActivity
                     startActivity(intent);
 
 
-                }
-                else
-                {
-                   
+                } else {
+
                 }
 
 
@@ -74,12 +105,7 @@ public class MainActivity extends AppCompatActivity
         };
 
 
-
-
         mDataUsers.keepSynced(true);
-
-
-
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -106,12 +132,6 @@ public class MainActivity extends AppCompatActivity
         firebaseAuth.addAuthStateListener(firebaselistener);
 
 
-
-
-
-
-
-
     }
 
 
@@ -136,7 +156,6 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -148,10 +167,9 @@ public class MainActivity extends AppCompatActivity
             //super.onBackPressed();
 
 
-
         }
         moveTaskToBack(true);
-        
+
     }
 
     @Override
@@ -224,7 +242,7 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    public  class ExamenesViewHolder extends RecyclerView.ViewHolder {
+    public class ExamenesViewHolder extends RecyclerView.ViewHolder {
         View mView;
 
         public ExamenesViewHolder(View itemView) {
@@ -233,18 +251,66 @@ public class MainActivity extends AppCompatActivity
             mView = itemView;
 
         }
-        public void setNombre(String nombre){
+
+        public void setNombre(String nombre) {
             TextView porf_username = (TextView) findViewById(R.id.editNombre);
             porf_username.setText(nombre);
 
         }
 
 
+    }
 
+    private void getStudentDetails(){
+
+    }
+
+    private void obtenerDatos() {
+
+        ApiService service = retrofit.create(ApiService.class);
+        retrofit2.Call<List<UsuarioRespuesta>> usuarioRespuestaCall = service.obtenerListaUsuario();
+
+        usuarioRespuestaCall.enqueue(new Callback<List<UsuarioRespuesta>>() {
+            @Override
+            public void onResponse(retrofit2.Call<List<UsuarioRespuesta>> call, Response<List<UsuarioRespuesta>> response) {
+
+            }
+                                             /*if (response.isSuccessful()) {
+
+                                                 ArrayList<UsuarioRespuesta> usuarioRespuesta = (ArrayList<UsuarioRespuesta>) response.body();
+                                                 Usuario usuario = usuarioRespuesta.get(0).getUser();
+                                                 listaUsuarioAdapter.adicionarlsitaUsario(usuarioRespuesta);
+                                                 //listaUsuarioAdapter.adicionarlsitaUsario(listausuario);
+
+                                                 for (int i =0; i<listausuario.size(); i++){
+                                                     Usuario u = listausuario.get(i);
+                                                     Log.i(TAG, "Usuairo:"+ u.getUsername());
+
+                                              //  Log.i(TAG, "Usuario: " + usuario.getUsername());
+
+
+                                             } else {
+                                                 Log.e(TAG, "onResponse : " + response.errorBody());
+
+                                             }
+
+                                         }
+                                         */
+
+                                         @Override
+                                         public void onFailure(retrofit2.Call<List<UsuarioRespuesta>> call, Throwable t) {
+                                             Log.e(TAG, "onFailure : " + t.getMessage());
+                                         }
+                                     }
+        );
+
+
+
+        }
     }
 
 
 
 
 
-}
+
