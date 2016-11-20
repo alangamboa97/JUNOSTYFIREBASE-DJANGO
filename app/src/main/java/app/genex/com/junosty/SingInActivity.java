@@ -86,6 +86,7 @@ public class SingInActivity extends AppCompatActivity {
             progressDialog.show();
 //que pedo
 
+//hice popo
 
             firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
