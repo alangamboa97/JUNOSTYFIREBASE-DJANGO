@@ -84,7 +84,7 @@ public class Tarea extends AppCompatActivity implements View.OnClickListener {
             protected void populateViewHolder(TareasViewHolder viewHolder, ListaTareas model, int position) {
                 viewHolder.setTitle(model.getNombre());
                 viewHolder.setDesc(model.getBoleta());
-                viewHolder.setDesc2(model.getTarea1());
+                viewHolder.setDesc2(model.getTarea());
 
 
             }
@@ -146,7 +146,7 @@ public class Tarea extends AppCompatActivity implements View.OnClickListener {
 
 
 
-        currend_user_bd.child("Tarea").setValue(tarea_nombre);
+        currend_user_bd.child("Tarea2").setValue(tarea_nombre);
 
 
 

@@ -6,17 +6,17 @@ package app.genex.com.junosty;
 
 public class ListaTareas {
 
-    private String Nombre, boleta , Tarea1;
+    private String Nombre, boleta , Tarea;
 
     public ListaTareas(){
 
     }
 
-    public ListaTareas(String nombre, String boleta, String Tarea1) {
+    public ListaTareas(String nombre, String boleta, String Tarea) {
 
         Nombre = nombre;
         this.boleta = boleta;
-        this.Tarea1 = Tarea1;
+        this.Tarea = Tarea;
     }
 
     public String getNombre() {
@@ -36,11 +36,11 @@ public class ListaTareas {
     }
 
 
-    public String getTarea1() {
-        return Tarea1;
+    public String getTarea() {
+        return Tarea;
     }
 
-    public void setTarea1(String tarea1) {
-        Tarea1 = tarea1;
+    public void setTarea1(String tarea) {
+        Tarea = tarea;
     }
 }

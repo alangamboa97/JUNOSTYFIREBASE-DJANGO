@@ -70,7 +70,10 @@ public class MainActivity extends AppCompatActivity
         imageView = (ImageView) this.findViewById(R.id.imageView);
         Bitmap bitmap = getIntent().getParcelableExtra("pic");
         imageView.setImageBitmap(bitmap);
+        TextView nombre = (TextView) findViewById(R.id.editNombre);
+
         /*
+
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(layoutManager);
@@ -261,7 +264,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    private void getStudentDetails(){
+    private void getStudentDetails() {
 
     }
 
@@ -305,15 +308,18 @@ public class MainActivity extends AppCompatActivity
         );
 
 
-
-        }
-
-
-    public void createQR(){
-
-
     }
+
+
+    public void setUserName() {
+
+        TextView nombre = (TextView) findViewById(R.id.editNombre);
+        nombre.setText((CharSequence) nombre);
     }
+
+
+}
+
 
 
 
