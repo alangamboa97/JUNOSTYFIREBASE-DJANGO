@@ -78,6 +78,7 @@ public class LoginActivity extends AppCompatActivity {
         */
 
 
+
         buttonreg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
                     BitMatrix bitMatrix = multiFormatWriter.encode(text2Qr, BarcodeFormat.QR_CODE, 200, 200);
                     BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
                     Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
-                    Intent intent = new Intent(context, Tarea.class);
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     intent.putExtra("pic", bitmap);
                     context.startActivity(intent);
                 } catch (WriterException e) {
@@ -101,6 +102,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+
+
 
 
     private void startRegister() {
@@ -135,19 +138,43 @@ public class LoginActivity extends AppCompatActivity {
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
 
 
-    startActivity(intent);
+                        startActivity(intent);
+                        crearQR();
 
+
+
+                    }
+
+
+                }
+            });
+
+
+        }
+    }
+
+
+    private void crearQR() {
+        final Context context = this;
+        String text2Qr = editTextboleta.getText().toString();
+        MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+        try {
+            BitMatrix bitMatrix = multiFormatWriter.encode(text2Qr, BarcodeFormat.QR_CODE, 200, 200);
+            BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
+            Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
+            Intent intent = new Intent(context, MainActivity.class);
+            intent.putExtra("pic", bitmap);
+            context.startActivity(intent);
+        } catch (WriterException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
 
 
-}
-        });
 
 
-        }
-        }
-        }
 
 
 
