@@ -70,6 +70,7 @@ public class SingInActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 checklogin();
+                createQR();
             }
         });
 
@@ -127,6 +128,7 @@ public class SingInActivity extends AppCompatActivity {
 
 
                 if(dataSnapshot.hasChild(user_id)){
+                    /*
                     Intent intent = new Intent(SingInActivity.this, MainActivity.class);
                     startActivity(intent);
 
@@ -146,7 +148,7 @@ public class SingInActivity extends AppCompatActivity {
 
                     }
 
-
+*/
 
 
 
@@ -172,4 +174,21 @@ public class SingInActivity extends AppCompatActivity {
 
 
     }
+    private  void createQR(){
+
+
+    final Context context = this;
+    String text2Qr = loginEmailfield.getText().toString();
+    MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+    try {
+        BitMatrix bitMatrix = multiFormatWriter.encode(text2Qr, BarcodeFormat.QR_CODE, 200, 200);
+        BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
+        Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
+        Intent intent = new Intent(context, MainActivity.class);
+        intent.putExtra("pic", bitmap);
+        context.startActivity(intent);
+    } catch (WriterException e) {
+        e.printStackTrace();
+    }
+}
 }

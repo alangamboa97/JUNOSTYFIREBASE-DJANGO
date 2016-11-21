@@ -99,7 +99,9 @@
                 android:layout_height="300dp"
                 android:id="@+id/imageView"
                 android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                />
 
             <TextView
                 android:layout_width="fill_parent"
