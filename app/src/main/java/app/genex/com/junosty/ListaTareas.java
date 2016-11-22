@@ -6,7 +6,26 @@ package app.genex.com.junosty;
 
 public class ListaTareas {
 
-    private String Tarea, Tarea1, Tarea2;
+    private String Tarea;
+
+    public String getTarea1() {
+        return Tarea1;
+    }
+
+    public void setTarea1(String tarea1) {
+        Tarea1 = tarea1;
+    }
+
+    public String getTarea2() {
+        return Tarea2;
+    }
+
+    public void setTarea2(String tarea2) {
+        Tarea2 = tarea2;
+    }
+
+    private String Tarea1;
+    private String Tarea2;
 
     public ListaTareas(){
 
@@ -26,7 +45,5 @@ public class ListaTareas {
         return Tarea;
     }
 
-    public void setTarea1(String tarea) {
-        Tarea = tarea;
-    }
+
 }
