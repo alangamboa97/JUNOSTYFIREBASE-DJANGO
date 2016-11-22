@@ -6,34 +6,20 @@ package app.genex.com.junosty;
 
 public class ListaTareas {
 
-    private String Nombre, boleta , Tarea;
+    private String Tarea, Tarea1, Tarea2;
 
     public ListaTareas(){
 
     }
 
-    public ListaTareas(String nombre, String boleta, String Tarea) {
+    public ListaTareas(String Tarea2, String boleta, String Tarea) {
 
-        Nombre = nombre;
-        this.boleta = boleta;
+
+
         this.Tarea = Tarea;
     }
 
-    public String getNombre() {
-        return Nombre;
-    }
 
-    public void setNombre(String nombre) {
-        Nombre = nombre;
-    }
-
-    public String getBoleta() {
-        return boleta;
-    }
-
-    public void setBoleta(String boleta) {
-        this.boleta = boleta;
-    }
 
 
     public String getTarea() {
