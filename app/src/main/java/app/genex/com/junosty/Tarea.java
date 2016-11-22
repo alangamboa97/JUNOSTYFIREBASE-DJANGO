@@ -82,8 +82,8 @@ public class Tarea extends AppCompatActivity implements View.OnClickListener {
         ) {
             @Override
             protected void populateViewHolder(TareasViewHolder viewHolder, ListaTareas model, int position) {
-                viewHolder.setTitle(model.getNombre());
-                viewHolder.setDesc(model.getBoleta());
+                viewHolder.setTitle(model.getTarea1());
+                viewHolder.setDesc(model.getTarea2());
                 viewHolder.setDesc2(model.getTarea());
 
 
@@ -135,6 +135,7 @@ public class Tarea extends AppCompatActivity implements View.OnClickListener {
         dialog.show();
     }
 
+
     private void guardarTarea() {
 
         final String tarea_nombre = tareaNombre.getText().toString().trim();
@@ -142,11 +143,16 @@ public class Tarea extends AppCompatActivity implements View.OnClickListener {
 
         String user_id = firebaseAuth.getCurrentUser().getUid();
 
+
+//obtiene la base de datos
         DatabaseReference currend_user_bd = databaseReference.child(user_id);
 
 
+//crea un child y guarda el valor del editText
+        currend_user_bd.child("Tarea").setValue(tarea_nombre);
 
-        currend_user_bd.child("Tarea2").setValue(tarea_nombre);
+        
+        currend_user_bd.child("Tarea1").setValue(tarea_nombre);
 
 
 

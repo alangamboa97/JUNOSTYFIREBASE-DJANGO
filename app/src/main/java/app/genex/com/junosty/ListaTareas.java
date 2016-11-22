@@ -8,12 +8,22 @@ public class ListaTareas {
 
     private String Tarea;
 
+    public ListaTareas(String Tarea2, String Tarea1, String Tarea) {
+
+
+
+        this.Tarea = Tarea;
+        this.Tarea1 = Tarea1;
+        this.Tarea2 = Tarea2;
+    }
+
     public String getTarea1() {
         return Tarea1;
     }
 
     public void setTarea1(String tarea1) {
         Tarea1 = tarea1;
+
     }
 
     public String getTarea2() {
@@ -31,12 +41,7 @@ public class ListaTareas {
 
     }
 
-    public ListaTareas(String Tarea2, String boleta, String Tarea) {
 
-
-
-        this.Tarea = Tarea;
-    }
 
 
 
