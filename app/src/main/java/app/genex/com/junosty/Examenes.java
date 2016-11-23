@@ -64,7 +64,7 @@ public class Examenes extends AppCompatActivity {
 
 
     }
-/*
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -83,7 +83,7 @@ public class Examenes extends AppCompatActivity {
 
         mRecyclerView.setAdapter(firebaseRecyclerAdapter);
     }
-*/
+
 
     public static class ExamenesViewHolder extends RecyclerView.ViewHolder {
             View mView;

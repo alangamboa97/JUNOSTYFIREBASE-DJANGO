@@ -8,6 +8,9 @@ public class ExamenModelo {
     private String Examen;
     private String DescExamen;
 
+    public ExamenModelo(){
+
+    }
     public ExamenModelo(String Examen, String DescExamen) {
 
 
