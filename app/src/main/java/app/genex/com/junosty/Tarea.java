@@ -161,7 +161,7 @@ public class Tarea extends AppCompatActivity implements View.OnClickListener {
 
     }
 
-    private void guardarTarea2 (){
+    private void guardarTarea2 () {
 
         final String tarea_nombre = tareaNombre.getText().toString().trim();
 
@@ -170,10 +170,8 @@ public class Tarea extends AppCompatActivity implements View.OnClickListener {
         DatabaseReference currend_user_bd = databaseReference.child(user_id);
         currend_user_bd.child("Tarea2").setValue(tarea_nombre);
 
-
-
-
     }
+
 
 
     public static class TareasViewHolder extends RecyclerView.ViewHolder {
