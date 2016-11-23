@@ -14,15 +14,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:textSize="15dp"
+        android:textSize="25dp"
         android:id="@+id/NombreMateria"
         android:padding="10dp" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="15dp"
 
-
-        android:id="@+id/DescMateria" />
+        android:id="@+id/DescMateria"
+        android:padding="10dp" />
 
 
 
