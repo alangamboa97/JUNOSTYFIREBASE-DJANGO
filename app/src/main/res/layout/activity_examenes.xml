@@ -26,4 +26,25 @@
         android:id="@+id/agregarExamen"
         android:layout_alignBottom="@+id/btnagregarexa"
         android:layout_toStartOf="@+id/btnagregarexa" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view_examenes"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="36dp">
+
+
+
+
+
+
+
+
+
+    </android.support.v7.widget.RecyclerView>
+
 </RelativeLayout>

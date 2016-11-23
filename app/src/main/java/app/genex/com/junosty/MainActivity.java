@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-
+/*
     @Override
     protected void onStart() {
         super.onStart();
@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity
 
         //mRecyclerView.setAdapter(firebaseRecyclerAdapter);
     }
-
+*/
 
     @Override
     public void onBackPressed() {
@@ -226,7 +226,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent2);
 
         } else if (id == R.id.nav_slideshow) {
-            Intent intent3 = new Intent(this, Examenes.class);
+            Intent intent3 = new Intent(MainActivity.this, Examenes.class);
             startActivity(intent3);
 
         } else if (id == R.id.nav_manage) {
@@ -243,7 +243,7 @@ public class MainActivity extends AppCompatActivity
 
 
     }
-
+/*
 
     public class ExamenesViewHolder extends RecyclerView.ViewHolder {
         View mView;
@@ -263,7 +263,7 @@ public class MainActivity extends AppCompatActivity
 
 
     }
-
+*/
     private void getStudentDetails() {
 
     }

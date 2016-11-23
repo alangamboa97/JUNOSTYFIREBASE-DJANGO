@@ -61,6 +61,7 @@ public class Tarea extends AppCompatActivity implements View.OnClickListener {
 
                         guardarTarea();
 
+
             }
         });
 
@@ -151,9 +152,23 @@ public class Tarea extends AppCompatActivity implements View.OnClickListener {
 //crea un child y guarda el valor del editText
         currend_user_bd.child("Tarea").setValue(tarea_nombre);
 
-        
+
         currend_user_bd.child("Tarea1").setValue(tarea_nombre);
 
+
+
+
+
+    }
+
+    private void guardarTarea2 (){
+
+        final String tarea_nombre = tareaNombre.getText().toString().trim();
+
+
+        String user_id = firebaseAuth.getCurrentUser().getUid();
+        DatabaseReference currend_user_bd = databaseReference.child(user_id);
+        currend_user_bd.child("Tarea2").setValue(tarea_nombre);
 
 
 
