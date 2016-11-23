@@ -5,7 +5,7 @@ package app.genex.com.junosty;
  */
 
 public class HorariosModelo {
-    private String NombreMateria ;
+    private String Materia ;
     private String DescMateria;
 
 
@@ -14,18 +14,18 @@ public class HorariosModelo {
 
     }
 
-    public HorariosModelo(String NombreMateria, String DescMateria){
-        this.NombreMateria = NombreMateria;
+    public HorariosModelo(String Materia, String DescMateria){
+        this.Materia = Materia;
         this.DescMateria = DescMateria;
     }
-    public String getNombreMateria() {
-        return NombreMateria;
+    public String getMateria() {
+        return Materia;
     }
 
 
 
-    public void setNombreMateria(String nombreMateria) {
-        NombreMateria = nombreMateria;
+    public void setNombreMateria(String Materia) {
+        Materia = Materia;
     }
 
     public String getDescMateria() {

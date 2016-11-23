@@ -52,7 +52,7 @@ public class Horarios extends AppCompatActivity {
 
     private void guardarMateria() {
 
-        final String examen_nombre = examen.getText().toString().trim();
+        final String materia_nombre = examen.getText().toString().trim();
 
 
         String user_id = firebaseauth.getCurrentUser().getUid();
@@ -60,7 +60,7 @@ public class Horarios extends AppCompatActivity {
         DatabaseReference currend_user_bd = database.child(user_id);
 
 
-        currend_user_bd.child("Materia").setValue(examen_nombre);
+        currend_user_bd.child("Materia").setValue(materia_nombre);
 
 
     }
@@ -75,7 +75,7 @@ public class Horarios extends AppCompatActivity {
         ) {
             @Override
             protected void populateViewHolder(HorariosViewHolder viewHolder, HorariosModelo model, int position) {
-                viewHolder.setNombreMateria(model.getNombreMateria());
+                viewHolder.setMateria(model.getMateria());
             }
 
 
@@ -93,7 +93,7 @@ public class Horarios extends AppCompatActivity {
             mView = itemView;
         }
 
-        public void setNombreMateria(String Materia)
+        public void setMateria(String Materia)
 
         {
 
