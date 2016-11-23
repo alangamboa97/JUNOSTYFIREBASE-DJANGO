@@ -14,6 +14,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.w3c.dom.Text;
+
 public class Horarios extends AppCompatActivity {
 
     private EditText examen;
@@ -21,6 +23,8 @@ public class Horarios extends AppCompatActivity {
     private DatabaseReference database;
     private FirebaseAuth firebaseauth;
     private RecyclerView mRecyclerView;
+    private EditText descMateria;
+    private Button btnagregarDescMateria;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,9 @@ public class Horarios extends AppCompatActivity {
 
         examen = (EditText) findViewById(R.id.agregarMateria);
         buttonagregex = (Button) findViewById(R.id.btnagregarMateria);
+        descMateria = (EditText) findViewById(R.id.agregarDescMateria);
+        btnagregarDescMateria = (Button) findViewById(R.id.btnagregardescMateria);
+
 
 
 
@@ -45,6 +52,13 @@ public class Horarios extends AppCompatActivity {
 
                 guardarMateria();
 
+            }
+        });
+
+        btnagregarDescMateria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                guardarDescMateria();
             }
         });
 
@@ -65,6 +79,14 @@ public class Horarios extends AppCompatActivity {
 
     }
 
+    private void guardarDescMateria(){
+        final String materia_desc = descMateria.getText().toString().trim();
+        String user_id = firebaseauth.getCurrentUser().getUid();
+        DatabaseReference current_user_bd = database.child(user_id);
+
+        current_user_bd.child("Descripción").setValue(materia_desc);
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -76,6 +98,9 @@ public class Horarios extends AppCompatActivity {
             @Override
             protected void populateViewHolder(HorariosViewHolder viewHolder, HorariosModelo model, int position) {
                 viewHolder.setMateria(model.getMateria());
+                viewHolder.setDescripción(model.getDescripción());
+
+
             }
 
 
@@ -99,7 +124,18 @@ public class Horarios extends AppCompatActivity {
 
             TextView materia = (TextView) mView.findViewById(R.id.NombreMateria);
             materia.setText(Materia);
+
+
         }
+
+        public void setDescripción(String Descripción){
+            TextView descMateria = (TextView) mView.findViewById(R.id.DescMateria);
+
+            descMateria.setText(Descripción);
+
+
+        }
+
     }
 
 

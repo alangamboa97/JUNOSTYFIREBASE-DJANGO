@@ -6,7 +6,7 @@ package app.genex.com.junosty;
 
 public class HorariosModelo {
     private String Materia ;
-    private String DescMateria;
+    private String Descripción;
 
 
     public HorariosModelo(){
@@ -14,9 +14,9 @@ public class HorariosModelo {
 
     }
 
-    public HorariosModelo(String Materia, String DescMateria){
+    public HorariosModelo(String Materia, String Descripción){
         this.Materia = Materia;
-        this.DescMateria = DescMateria;
+        this.Descripción = Descripción;
     }
     public String getMateria() {
         return Materia;
@@ -28,12 +28,12 @@ public class HorariosModelo {
         Materia = Materia;
     }
 
-    public String getDescMateria() {
-        return DescMateria;
+    public String getDescripción() {
+        return Descripción;
     }
 
     public void setDescMateria(String descMateria) {
-        DescMateria = descMateria;
+        Descripción = descMateria;
     }
 
 

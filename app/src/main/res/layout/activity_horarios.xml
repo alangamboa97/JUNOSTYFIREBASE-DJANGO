@@ -27,15 +27,31 @@
         android:layout_alignBottom="@+id/btnagregarexa"
         android:layout_toStartOf="@+id/btnagregarexa" />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/agregarDescMateria"
+        android:layout_below="@id/agregarMateria"
+
+        android:layout_alignEnd="@+id/agregarMateria" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar Desc"
+        android:id="@+id/btnagregardescMateria"
+        android:layout_below="@+id/btnagregarMateria"
+        android:layout_toEndOf="@+id/agregarDescMateria" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view_materias"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="36dp">
+        android:layout_below="@+id/agregarDescMateria"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/btnagregardescMateria"
+        android:layout_marginEnd="12dp">
 
 
 
