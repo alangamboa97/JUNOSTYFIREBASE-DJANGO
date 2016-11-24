@@ -83,6 +83,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startRegister();
+
+                /*
                 String text2Qr = editTextboleta.getText().toString();
                 MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
                 try {
@@ -96,6 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                     e.printStackTrace();
 
                 }
+             */
             }
 
         });
@@ -139,8 +142,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
                         startActivity(intent);
-                        crearQR();
-
+                        // crearQR();
 
 
                     }
