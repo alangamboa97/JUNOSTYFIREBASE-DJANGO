@@ -33,7 +33,7 @@ public class Tarea extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth firebaseAuth;
     private EditText tareaNombre;
     private Button agregar;
-    private EditText tareaNombre2;
+    private EditText tareaDesc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +46,17 @@ public class Tarea extends AppCompatActivity implements View.OnClickListener {
 
         buttonagregar.setOnClickListener(this);
         tareaNombre = (EditText) findViewById(R.id.tarea);
-        tareaNombre2 = (EditText) findViewById(R.id.tarea);
+        tareaDesc = (EditText) findViewById(R.id.tareaDesc);
+
 
         agregar = (Button) findViewById(R.id.agregar);
+        Button btnagregarDes = (Button) findViewById(R.id.btnagregardescTarea);
+        btnagregarDes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                guardarDescTarea();
+            }
+        });
 
         agregar.setOnClickListener(new View.OnClickListener() {
 
@@ -84,8 +92,8 @@ public class Tarea extends AppCompatActivity implements View.OnClickListener {
             @Override
             protected void populateViewHolder(TareasViewHolder viewHolder, ListaTareas model, int position) {
                 viewHolder.setTitle(model.getTarea1());
-                viewHolder.setDesc(model.getTarea2());
-                viewHolder.setDesc2(model.getTarea());
+                viewHolder.setDesc(model.getDescripciónT());
+               // viewHolder.setDesc2(model.getTarea());
 
 
             }
@@ -169,6 +177,17 @@ public class Tarea extends AppCompatActivity implements View.OnClickListener {
         String user_id = firebaseAuth.getCurrentUser().getUid();
         DatabaseReference currend_user_bd = databaseReference.child(user_id);
         currend_user_bd.child("Tarea2").setValue(tarea_nombre);
+
+    }
+
+    private void guardarDescTarea(){
+
+        final String tarea_desc = tareaDesc.getText().toString().trim();
+
+
+        String user_id = firebaseAuth.getCurrentUser().getUid();
+        DatabaseReference currend_user_bd = databaseReference.child(user_id);
+        currend_user_bd.child("DescripciónT").setValue(tarea_desc);
 
     }
 

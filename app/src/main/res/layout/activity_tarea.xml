@@ -16,13 +16,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/agregartarea" />
 
-    <EditText
-        android:id="@+id/tarea"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/agregartarea"
-        android:layout_alignParentStart="true" />
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view"
         android:scrollbars="vertical"
@@ -43,14 +36,37 @@
 
     </android.support.v7.widget.RecyclerView>
 
+    <EditText
+        android:id="@+id/tarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/agregartarea"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="11dp" />
+    <EditText
+        android:id="@+id/tareaDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tarea"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="11dp" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/agregar"
         android:text="Agregar"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/agregartarea"
-        android:layout_marginStart="55dp" />
+        android:layout_above="@+id/my_recycler_view"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnagregardescTarea"
+        android:text="Agregar Descripción"
+        android:layout_alignBaseline="@+id/tareaDesc"
+        android:layout_alignBottom="@+id/tareaDesc"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

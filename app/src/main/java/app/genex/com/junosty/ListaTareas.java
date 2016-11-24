@@ -7,14 +7,26 @@ package app.genex.com.junosty;
 public class ListaTareas {
 
     private String Tarea;
+    private String DescripciónT;
 
-    public ListaTareas(String Tarea2, String Tarea1, String Tarea) {
+    public String getDescripciónT() {
+        return DescripciónT;
+    }
+
+    public void setDescripciónT(String descripciónT) {
+        DescripciónT = descripciónT;
+    }
+
+
+
+    public ListaTareas(String Tarea2, String Tarea1, String Tarea, String DescripciónT) {
 
 
 
         this.Tarea = Tarea;
         this.Tarea1 = Tarea1;
         this.Tarea2 = Tarea2;
+        this.DescripciónT = DescripciónT;
     }
 
     public String getTarea1() {
