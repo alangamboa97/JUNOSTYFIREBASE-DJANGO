@@ -230,6 +230,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent3);
 
         } else if (id == R.id.nav_manage) {
+            Intent intent4 = new Intent(MainActivity.this, Configuracion.class);
+            startActivity(intent4);
 
         } else if (id == R.id.nav_share) {
 
