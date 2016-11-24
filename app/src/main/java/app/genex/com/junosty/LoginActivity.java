@@ -84,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 startRegister();
 
-                /*
+
                 String text2Qr = editTextboleta.getText().toString();
                 MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
                 try {
@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                     e.printStackTrace();
 
                 }
-             */
+
             }
 
         });
@@ -112,7 +112,7 @@ public class LoginActivity extends AppCompatActivity {
     private void startRegister() {
 
 
-        String email = editTextemail.getText().toString().trim() + "@hotmail.com    ";
+        String email = editTextemail.getText().toString().trim() + "@hotmail.com";
         final String boleta = editTextboleta.getText().toString().trim();
         final String nombre = editTextnombre.getText().toString().trim();
         String contraseña = editTextcontraseña.getText().toString().trim();
@@ -139,10 +139,13 @@ public class LoginActivity extends AppCompatActivity {
                         progressdialog.dismiss();
 
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-
-
                         startActivity(intent);
+
+
+
                         // crearQR();
+
+
 
 
                     }
