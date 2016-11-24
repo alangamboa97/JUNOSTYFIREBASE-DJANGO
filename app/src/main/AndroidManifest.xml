@@ -28,9 +28,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Horarios" />
-        <activity android:name=".Configuracion"></activity>
-        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat"/>
+        <activity android:name=".Configuracion" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity android:name=".PerfilActivity"></activity>
     </application>
 
 </manifest>

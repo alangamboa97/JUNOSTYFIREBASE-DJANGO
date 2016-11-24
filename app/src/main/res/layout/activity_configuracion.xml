@@ -23,12 +23,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
         android:ems="10"
         android:layout_below="@+id/setupimageButton"
         android:layout_alignEnd="@+id/setupimageButton"
         android:layout_marginTop="16dp"
-        android:id="@+id/editText" />
+        android:id="@+id/editText"
+        android:hint="Nombre" />
 
     <Button
         android:text="Modificar"

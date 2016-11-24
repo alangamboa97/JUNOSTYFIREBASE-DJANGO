@@ -234,6 +234,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent4);
 
         } else if (id == R.id.nav_share) {
+            Intent intent5 = new Intent(this, PerfilActivity.class);
+            startActivity(intent5);
+
 
         } else if (id == R.id.nav_send) {
 
