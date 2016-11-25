@@ -239,6 +239,8 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_send) {
+            Intent intent6 = new Intent(this, RetrieveActivity.class);
+            startActivity(intent6);
 
         }
 

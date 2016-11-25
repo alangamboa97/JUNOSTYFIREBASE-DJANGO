@@ -64,18 +64,6 @@ public class LoginActivity extends AppCompatActivity {
         editTextnombre = (EditText) findViewById(R.id.editTextnombre);
 
         buttonreg = (Button) findViewById(R.id.buttonreg);
-        //buttoninisesion = (Button) findViewById(R.id.buttoninisesion);
-        /*
-        buttoninisesion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(LoginActivity.this, SingInActivity.class);
-                startActivity(intent);
-
-            }
-        });
-        */
 
 
 
@@ -84,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 startRegister();
 
-
+/*
                 String text2Qr = editTextboleta.getText().toString();
                 MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
                 try {
@@ -98,6 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                     e.printStackTrace();
 
                 }
+                */
 
             }
 
@@ -107,11 +96,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
+//Registra al usuario bien shidori
 
     private void startRegister() {
 
-
+        final Context context = this;
         String email = editTextemail.getText().toString().trim() + "@hotmail.com";
         final String boleta = editTextboleta.getText().toString().trim();
         final String nombre = editTextnombre.getText().toString().trim();
@@ -137,9 +126,29 @@ public class LoginActivity extends AppCompatActivity {
                         currend_user_bd.child("Nombre").setValue(nombre);
 
                         progressdialog.dismiss();
+                        String text2Qr = editTextboleta.getText().toString();
+                        MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+                        try {
+                            BitMatrix bitMatrix = multiFormatWriter.encode(text2Qr, BarcodeFormat.QR_CODE, 200, 200);
+                            BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
+                            Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            intent.putExtra("pic", bitmap);
+                            context.startActivity(intent);
+                       ;
 
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
+                        } catch (WriterException e) {
+                            e.printStackTrace();
+
+                        }
+
+
+
+
+
+
+
+
 
 
 
@@ -162,6 +171,7 @@ public class LoginActivity extends AppCompatActivity {
     private void crearQR() {
         final Context context = this;
         String text2Qr = editTextboleta.getText().toString();
+      //  String text3QR = editTextnombre.getText().toString();
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
         try {
             BitMatrix bitMatrix = multiFormatWriter.encode(text2Qr, BarcodeFormat.QR_CODE, 200, 200);
