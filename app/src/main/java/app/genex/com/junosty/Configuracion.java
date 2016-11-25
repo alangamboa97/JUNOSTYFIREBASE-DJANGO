@@ -39,6 +39,8 @@ public class Configuracion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.ic_menu_manage);
         mSetupImagebtn = (ImageButton) findViewById(R.id.setupimageButton);
         mNombre = (EditText) findViewById(R.id.editText);
         mSubmitbtn =(Button) findViewById(R.id.ssetupsubmitbutton);

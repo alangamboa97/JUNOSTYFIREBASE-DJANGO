@@ -193,7 +193,8 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            Intent intentAjustes = new Intent(this, Configuracion.class);
+            startActivity(intentAjustes);
         }
         if (id == R.id.action_logout) {
 
