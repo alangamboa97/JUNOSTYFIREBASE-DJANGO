@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editTextcontraseña;
     private TextView textViewIniciar;
     private EditText editTextnombre;
-    private Button buttoninisesion;
+
 
     private ProgressDialog progressdialog;
 
@@ -62,6 +62,8 @@ public class LoginActivity extends AppCompatActivity {
         editTextboleta = (EditText) findViewById(R.id.editBoleta);
         editTextcontraseña = (EditText) findViewById(R.id.editcontraseña);
         editTextnombre = (EditText) findViewById(R.id.editTextnombre);
+        final String email = editTextemail.getText().toString().trim();
+        final String boleta = editTextboleta.getText().toString();
 
         buttonreg = (Button) findViewById(R.id.buttonreg);
 
@@ -70,23 +72,11 @@ public class LoginActivity extends AppCompatActivity {
         buttonreg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startRegister();
 
-/*
-                String text2Qr = editTextboleta.getText().toString();
-                MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
-                try {
-                    BitMatrix bitMatrix = multiFormatWriter.encode(text2Qr, BarcodeFormat.QR_CODE, 200, 200);
-                    BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-                    Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    intent.putExtra("pic", bitmap);
-                    context.startActivity(intent);
-                } catch (WriterException e) {
-                    e.printStackTrace();
 
-                }
-                */
+                    startRegister();
+
+
 
             }
 
@@ -105,6 +95,9 @@ public class LoginActivity extends AppCompatActivity {
         final String boleta = editTextboleta.getText().toString().trim();
         final String nombre = editTextnombre.getText().toString().trim();
         String contraseña = editTextcontraseña.getText().toString().trim();
+
+
+
 
 
         if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(boleta) && !TextUtils.isEmpty(contraseña) && !TextUtils.isEmpty(nombre)) {
@@ -135,7 +128,7 @@ public class LoginActivity extends AppCompatActivity {
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             intent.putExtra("pic", bitmap);
                             context.startActivity(intent);
-                       ;
+
 
                         } catch (WriterException e) {
                             e.printStackTrace();
@@ -152,7 +145,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-                        // crearQR();
+
 
 
 
@@ -168,22 +161,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    private void crearQR() {
-        final Context context = this;
-        String text2Qr = editTextboleta.getText().toString();
-      //  String text3QR = editTextnombre.getText().toString();
-        MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
-        try {
-            BitMatrix bitMatrix = multiFormatWriter.encode(text2Qr, BarcodeFormat.QR_CODE, 200, 200);
-            BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-            Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
-            Intent intent = new Intent(context, MainActivity.class);
-            intent.putExtra("pic", bitmap);
-            context.startActivity(intent);
-        } catch (WriterException e) {
-            e.printStackTrace();
-        }
-    }
 
 }
 

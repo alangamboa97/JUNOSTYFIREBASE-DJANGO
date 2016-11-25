@@ -70,13 +70,14 @@ public class SingInActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 checklogin();
-                createQR();
+                //) createQR();
             }
         });
 
     }
 
     private void checklogin() {
+
 
         String email = loginEmailfield.getText().toString().trim()+ "@hotmail.com";
         final String password = contraseñaloginfield.getText().toString().trim();
@@ -85,9 +86,7 @@ public class SingInActivity extends AppCompatActivity {
 
             progressDialog.setMessage("Iniciando sesión...");
             progressDialog.show();
-//que pedo
 
-//hice popo
 
             firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
@@ -96,8 +95,8 @@ public class SingInActivity extends AppCompatActivity {
 
                     progressDialog.dismiss();
 
-
                     checkuserExist();
+
 
 
 
@@ -121,6 +120,9 @@ public class SingInActivity extends AppCompatActivity {
     private void checkuserExist() {
 
         final String user_id = firebaseAuth.getCurrentUser().getUid();
+        final Context context = this;
+        final String text2Qr = loginEmailfield.getText().toString();
+        final MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
 
         databaserefrence.addValueEventListener(new ValueEventListener() {
             @Override
@@ -128,19 +130,15 @@ public class SingInActivity extends AppCompatActivity {
 
 
                 if(dataSnapshot.hasChild(user_id)){
-                    /*
-                    Intent intent = new Intent(SingInActivity.this, MainActivity.class);
-                    startActivity(intent);
 
-                    String text2Qr = loginEmailfield.getText().toString();
-                    MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+
                     try {
                         BitMatrix bitMatrix = multiFormatWriter.encode(text2Qr, BarcodeFormat.QR_CODE, 200, 200);
                         BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
                         Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
+                        Intent intent = new Intent(SingInActivity.this, MainActivity.class);
                         intent.putExtra("pic", bitmap);
-
-
+                        context.startActivity(intent);
 
 
                     } catch (WriterException e) {
@@ -148,7 +146,8 @@ public class SingInActivity extends AppCompatActivity {
 
                     }
 
-*/
+
+
 
 
 
@@ -174,21 +173,7 @@ public class SingInActivity extends AppCompatActivity {
 
 
     }
-    private  void createQR(){
 
 
-    final Context context = this;
-    String text2Qr = loginEmailfield.getText().toString();
-    MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
-    try {
-        BitMatrix bitMatrix = multiFormatWriter.encode(text2Qr, BarcodeFormat.QR_CODE, 200, 200);
-        BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-        Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
-        Intent intent = new Intent(context, MainActivity.class);
-        intent.putExtra("pic", bitmap);
-        context.startActivity(intent);
-    } catch (WriterException e) {
-        e.printStackTrace();
-    }
 }
-}
+
