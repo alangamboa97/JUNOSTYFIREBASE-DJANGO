@@ -10,11 +10,25 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="app.genex.com.junosty.Tarea">
 
+
+    <EditText
+        android:background="@drawable/editstyle"
+        android:id="@+id/tarea"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true" />
+
     <Button
-        android:text="Agregar Tarea "
+        android:background="@color/colorPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/agregartarea" />
+        android:id="@+id/btnagregardescTarea"
+        android:text=" Descripción"
+        android:fontFamily="sans-serif-light"
+        android:textColor="#FFFF"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/tareaDesc"
+        android:layout_alignTop="@+id/tareaDesc" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view"
@@ -22,9 +36,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:layout_below="@+id/tarea"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="36dp">
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/tareaDesc"
+        android:layout_alignParentStart="true">
 
 
 
@@ -36,37 +50,25 @@
 
     </android.support.v7.widget.RecyclerView>
 
-    <EditText
-        android:id="@+id/tarea"
-        android:layout_width="match_parent"
+    <Button
+        android:background="@color/colorPrimary"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/agregartarea"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="11dp" />
+        android:id="@+id/agregar"
+        android:text="Agregar"
+        android:textColor="#FFFF"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/tareaDesc" />
+
     <EditText
+        android:background="@drawable/editstyle"
         android:id="@+id/tareaDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tarea"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="11dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/agregar"
-        android:text="Agregar"
-        android:layout_above="@+id/my_recycler_view"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnagregardescTarea"
-        android:text="Agregar Descripción"
-        android:layout_alignBaseline="@+id/tareaDesc"
-        android:layout_alignBottom="@+id/tareaDesc"
-        android:layout_alignParentEnd="true" />
+        android:layout_marginTop="16dp" />
 
 
 </RelativeLayout>

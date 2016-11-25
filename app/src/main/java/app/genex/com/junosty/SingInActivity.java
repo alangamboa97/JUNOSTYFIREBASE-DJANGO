@@ -45,6 +45,7 @@ public class SingInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_sing_in);
 
 
@@ -62,15 +63,22 @@ public class SingInActivity extends AppCompatActivity {
 
 
         loginEmailfield = (EditText)findViewById(R.id.editTextsignemail);
+        final String email = loginEmailfield.getText().toString().trim();
         contraseñaloginfield = (EditText) findViewById(R.id.editTextsignpassword);
+        final String contraseña = contraseñaloginfield.getText().toString().trim();
 
         buttoninisesion = (Button) findViewById(R.id.buttoninicias);
 
         buttoninisesion.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View view) {
+
+
+
                 checklogin();
-                //) createQR();
+
             }
         });
 
@@ -111,6 +119,8 @@ public class SingInActivity extends AppCompatActivity {
 
                 }
             });
+
+
 
 
 

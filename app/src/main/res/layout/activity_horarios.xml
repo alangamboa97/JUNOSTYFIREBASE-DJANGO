@@ -10,48 +10,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="app.genex.com.junosty.Horarios">
 
-    <Button
-        android:text="Agregar Materia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/btnagregarMateria" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/agregarMateria"
-        android:layout_alignBottom="@+id/btnagregarexa"
-        android:layout_toStartOf="@+id/btnagregarexa" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/agregarDescMateria"
-        android:layout_below="@id/agregarMateria"
-
-        android:layout_alignEnd="@+id/agregarMateria" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Agregar Desc"
-        android:id="@+id/btnagregardescMateria"
-        android:layout_below="@+id/btnagregarMateria"
-        android:layout_toEndOf="@+id/agregarDescMateria" />
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view_materias"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/agregarDescMateria"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/btnagregardescMateria"
-        android:layout_marginEnd="12dp">
+        android:layout_below="@+id/btnagregardescMateria"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="19dp">
 
 
 
@@ -62,5 +28,51 @@
 
 
     </android.support.v7.widget.RecyclerView>
+
+    <Button
+        android:background="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Horario"
+        android:textColor="#FFFF"
+        android:id="@+id/btnagregardescMateria"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/agregarDescMateria"
+        android:layout_alignBottom="@+id/agregarDescMateria"
+        android:layout_alignTop="@+id/agregarDescMateria" />
+
+    <Button
+        android:text="Agregar"
+        android:background="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnagregarMateria"
+android:textColor="#FFFF"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/agregarMateria"
+        android:layout_alignBottom="@+id/agregarMateria"
+        android:layout_alignTop="@+id/agregarMateria" />
+
+    <EditText
+        android:background="@drawable/editstyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/agregarMateria"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="14dp" />
+
+    <EditText
+        android:background="@drawable/editstyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/agregarDescMateria"
+
+        android:layout_below="@+id/btnagregarMateria"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="12dp"
+        android:layout_toStartOf="@+id/btnagregarMateria" />
 
 </RelativeLayout>

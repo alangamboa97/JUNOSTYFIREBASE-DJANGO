@@ -12,6 +12,7 @@
     tools:context="app.genex.com.junosty.Configuracion">
 
     <ImageButton
+        android:background="@drawable/editstyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/com_facebook_profile_picture_blank_square"
@@ -20,6 +21,7 @@
         android:layout_centerHorizontal="true" />
 
     <EditText
+        android:background="@drawable/editstyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
@@ -31,6 +33,8 @@
         android:hint="Nombre" />
 
     <Button
+        android:background="@color/colorPrimary"
+        android:textColor="#FFFF"
         android:text="Modificar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

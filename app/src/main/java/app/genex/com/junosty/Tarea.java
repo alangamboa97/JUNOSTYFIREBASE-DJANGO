@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
 
-public class Tarea extends AppCompatActivity implements View.OnClickListener {
+public class Tarea extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -42,9 +42,9 @@ public class Tarea extends AppCompatActivity implements View.OnClickListener {
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        Button buttonagregar = (Button) findViewById(R.id.agregartarea);
+        //Button buttonagregar = (Button) findViewById(R.id.agregartarea);
 
-        buttonagregar.setOnClickListener(this);
+
         tareaNombre = (EditText) findViewById(R.id.tarea);
         tareaDesc = (EditText) findViewById(R.id.tareaDesc);
 
@@ -103,46 +103,6 @@ public class Tarea extends AppCompatActivity implements View.OnClickListener {
     }
 
 
-    @Override
-    public void onClick(View view) {
-        final  EditText taskEditText = new EditText(this);
-        final String tarea = taskEditText.getText().toString().trim();
-
-
-        AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle("Añade una tarea")
-                .setMessage("¿Que quieres hacer?")
-                .setView(taskEditText)
-                .setNegativeButton("Cancelar", null)
-                .setPositiveButton("Añadir", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        firebaseAuth.getCurrentUser();
-                        if(!TextUtils.isEmpty(tarea)){
-
-
-                            String user_id = firebaseAuth.getCurrentUser().getUid();
-
-                            DatabaseReference currend_user_bd = databaseReference.child(user_id);
-
-
-
-                            currend_user_bd.child("Titulo").setValue(tarea);
-
-
-                        }
-
-
-
-
-
-                    }
-
-                    })
-                .create();
-        dialog.show();
-    }
 
 
     private void guardarTarea() {
@@ -222,6 +182,7 @@ public class Tarea extends AppCompatActivity implements View.OnClickListener {
 
 
         }
+
 
         public void setDesc2 (String desc2){
             TextView desc_tarea2 = (TextView) mView.findViewById(R.id.descripcionTarea1);

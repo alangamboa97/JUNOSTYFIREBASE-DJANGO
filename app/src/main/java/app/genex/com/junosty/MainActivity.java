@@ -1,5 +1,6 @@
 package app.genex.com.junosty;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -28,6 +29,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +44,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import static app.genex.com.junosty.R.id.textView;
+import static app.genex.com.junosty.R.id.user_profile_photo;
+import static app.genex.com.junosty.R.id.user_profile_short_bio;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -50,27 +54,32 @@ public class MainActivity extends AppCompatActivity
     private FirebaseAuth.AuthStateListener firebaselistener;
 
     private DatabaseReference mDataUsers;
+    private DatabaseReference mDataUsersPic;
     private TextView nombre;
     private String userName;
-    ImageView imageView;
-
+    private ImageView imageView;
+    private ImageView foto;
     private Retrofit retrofit;
     private static final String TAG = "Usuario";
 
     private RecyclerView recyclerView;
     private ListaUsuarioAdapter listaUsuarioAdapter;
-
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         nombre = (TextView) findViewById(R.id.editNombre);
-
+        foto = (ImageView) findViewById(R.id.user_profile_photo);
         imageView = (ImageView) this.findViewById(R.id.imageView);
         Bitmap bitmap = getIntent().getParcelableExtra("pic");
         imageView.setImageBitmap(bitmap);
+
         TextView nombre = (TextView) findViewById(R.id.editNombre);
+
+
+
 
         /*
 
@@ -212,7 +221,8 @@ public class MainActivity extends AppCompatActivity
             Intent intent4 = new Intent(MainActivity.this, Configuracion.class);
             startActivity(intent4);
 
-        } else if (id == R.id.nav_share) {
+        }
+        /*else if (id == R.id.nav_share) {
             Intent intent5 = new Intent(this, PerfilActivity.class);
             startActivity(intent5);
 
@@ -222,6 +232,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent6);
 
         }
+        */
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

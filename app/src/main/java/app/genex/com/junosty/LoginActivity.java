@@ -63,22 +63,21 @@ public class LoginActivity extends AppCompatActivity {
         editTextcontraseña = (EditText) findViewById(R.id.editcontraseña);
         editTextnombre = (EditText) findViewById(R.id.editTextnombre);
         final String email = editTextemail.getText().toString().trim();
-        final String boleta = editTextboleta.getText().toString();
+        final String boleta = editTextboleta.getText().toString().trim();
+        final String contraseña = editTextcontraseña.getText().toString().trim();
+        final String nombre = editTextnombre.getText().toString().trim();
+
 
         buttonreg = (Button) findViewById(R.id.buttonreg);
-
 
 
         buttonreg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
                     startRegister();
+                }
 
-
-
-            }
 
         });
 
@@ -136,20 +135,6 @@ public class LoginActivity extends AppCompatActivity {
                         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     }
 
 
@@ -158,9 +143,9 @@ public class LoginActivity extends AppCompatActivity {
 
 
         }
+
+
     }
-
-
 
 }
 

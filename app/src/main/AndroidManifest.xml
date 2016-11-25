@@ -17,6 +17,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SingInActivity"
+            android:label="Iniciar Sesión"
             android:noHistory="true" />
         <activity android:name=".Tarea"
             android:label="Tareas"/>

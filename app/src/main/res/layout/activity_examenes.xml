@@ -11,21 +11,15 @@
     tools:context="app.genex.com.junosty.Examenes">
 
     <Button
+        android:textColor="#FFFF"
+
+        android:background="@color/colorPrimary"
         android:text="Agregar Examen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/btnagregarexa" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/agregarExamen"
-        android:layout_alignBottom="@+id/btnagregarexa"
-        android:layout_toStartOf="@+id/btnagregarexa" />
+        android:id="@+id/btnagregarexa"
+        android:layout_alignBottom="@+id/agregarExamen" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view_examenes"
@@ -46,5 +40,15 @@
 
 
     </android.support.v7.widget.RecyclerView>
+
+    <EditText
+        android:background="@drawable/editstyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/agregarExamen"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/btnagregarexa" />
 
 </RelativeLayout>

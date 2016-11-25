@@ -90,12 +90,14 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="#FFFF"
+
         android:text="Registrar"
         android:fontFamily="sans-serif-light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonreg"
+
         android:background="@color/colorPrimary"
         android:layout_marginTop="32dp"
         android:layout_below="@+id/editemail"

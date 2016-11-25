@@ -8,22 +8,40 @@
     android:orientation="vertical"
 
     >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Matera:"
+        android:textSize="15dp"
+        android:fontFamily="sans-serif-light"
+        android:padding="5dp"/>
     
     <TextView
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:textSize="25dp"
+        android:fontFamily="sans-serif-light"
+        android:textSize="15dp"
         android:id="@+id/NombreMateria"
-        android:padding="10dp" />
+        android:padding="5dp" />
+
     <TextView
+        android:fontFamily="sans-serif-light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Horario"
+        android:textSize="15dp"
+        android:padding="5dp"
+
+        />
+    <TextView
+        android:fontFamily="sans-serif-light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15dp"
 
         android:id="@+id/DescMateria"
-        android:padding="10dp" />
+        android:padding="5dp" />
 
 
 
