@@ -137,28 +137,6 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-/*
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseRecyclerAdapter<PerfilHelper, ExamenesViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<PerfilHelper, ExamenesViewHolder>(
-                PerfilHelper.class, R.layout.activity_main, ExamenesViewHolder.class, mDataUsers
-
-        ) {
-            @Override
-            protected void populateViewHolder(ExamenesViewHolder viewHolder, PerfilHelper model, int position) {
-                viewHolder.setNombre(model.getNombre());
-                //viewHolder.(model.getBoleta());
-                //viewHolder.setDesc2(model.getTarea1());
-
-
-            }
-        };
-
-        //mRecyclerView.setAdapter(firebaseRecyclerAdapter);
-    }
-*/
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
