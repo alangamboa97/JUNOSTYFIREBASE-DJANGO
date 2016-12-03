@@ -34,6 +34,8 @@ public class Configuracion extends AppCompatActivity {
 
     private static final int GALLERY_REQUEST = 1;
 
+    //hola
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
