@@ -86,6 +86,11 @@ public class Configuracion extends AppCompatActivity {
             mProgress.setMessage("Espera...");
             mProgress.show();
 
+            
+
+
+
+
             StorageReference filepad = mStorageImage.child(mImageUri.getLastPathSegment());
 
             filepad.putFile(mImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
